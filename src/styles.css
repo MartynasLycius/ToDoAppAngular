@@ -1,0 +1,9 @@
+/* Nav Bar */
+.navbar {
+  background: #1976d2 !important;
+  padding: 3px 1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff !important;
+}
