@@ -23,8 +23,17 @@ angular.module('ToDoApp').config(function ($stateProvider, $urlRouterProvider) {
         url: '/',
         views: {
             'content@': {
-                templateUrl: './views/home.html',
-                controller: 'HomeController'
+                templateUrl: './views/todo-item.html',
+                controller: 'TodoItemController'
+            }
+        }
+    }).state('todo-item-add', {
+        parent: 'nav',
+        url: '/todo-item-add/{id}',
+        views: {
+            'content@': {
+                templateUrl: './views/todo-item-add.html',
+                controller: 'TodoItemAddController'
             }
         }
     }).state('page-not-found', {

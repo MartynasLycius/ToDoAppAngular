@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+    <div class="panel-heading caption-subject font-green-sharp bold uppercase">
+        <span>Todo Item List</span>
+        <span class=" pull-right" style="margin-top: -6px;">
+            <a ui-sref="todo-item-add" >
+                <span class="font-grey-cararra"><span class="glyphicon glyphicon-plus"></span> Add New</span>
+            </a>
+        </span>
+    </div>
+    <div class="panel-body">
+
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th class="text-center">Serial No</th>
+                <th class="text-center">Title</th>
+                <th class="text-center">Description</th>
+                <th class="text-center">Status</th>
+                <th class="text-center">Date</th>
+                <th class="text-center">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-show="todoItems.length == 0">
+                <td class="text-center" colspan="3">No Records</td>
+            </tr>
+            <tr ng-repeat="todoItem in todoItems">
+                <td class="text-center">{{filesSerial+$index+1}}</td>
+                <td class="text-center">{{todoItem.title}}</td>
+                <td class="text-center">{{todoItem.description}}</td>
+                <td class="text-center">{{todoItem.status}}</td>
+                <td class="text-center">{{todoItem.date}}</td>
+                <td class="text-center">
+                    <a ui-sref="todo-item-add({id:todoItem.id})">Edit</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <pagination ng-model="currentPage"
+                    total-items="totalItems"
+                    items-per-page="itemsPerPage"
+                    max-size="maxSize"
+                    boundary-links="true"
+                    ng-change="pageChanged()"></pagination>
+    </div>
+</div>
+</div>

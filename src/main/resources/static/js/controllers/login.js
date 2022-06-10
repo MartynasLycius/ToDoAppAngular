@@ -9,7 +9,7 @@ angular.module('ToDoApp')
                 if (res.data.token) {
                     $scope.message = '';
                     // setting the Authorization Bearer token with JWT token
-                    $http.defaults.headers.common['Authorization'] = res.data.type+ res.data.token;
+                    $http.defaults.headers.common['Authorization'] = res.data.type+' '+ res.data.token;
                     // setting the user in AuthService
                     AuthService.user = res.data;
                     $rootScope.$broadcast('LoginSuccessful');

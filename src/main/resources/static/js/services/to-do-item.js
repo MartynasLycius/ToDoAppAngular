@@ -2,8 +2,8 @@
 
 angular.module('ToDoApp')
     .factory('TodoItem', function ($http, $resource, AuthService) {
-        return $resource('./api/to-do-item:id', {}, {
-            'get'  : { method: 'GET',headers: {'Authorization':encodeURIComponent(AuthService.type+'%s'+ AuthService.token)}, params: {}, format: 'json',
+            return $resource('./api/to-do-item:id', {}, {
+            'get'  : { method: 'GET',headers: {'Content-Type': 'application/json'}, params: {}, format: 'json',
                 transformResponse: [function (data, headersGetter) {
                     return data;
                 }].concat($http.defaults.transformResponse)},
