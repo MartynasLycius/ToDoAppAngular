@@ -31,7 +31,9 @@
                 <td class="text-center">{{todoItem.status}}</td>
                 <td class="text-center">{{todoItem.date}}</td>
                 <td class="text-center">
-                    <a ui-sref="todo-item-add({id:todoItem.id})">Edit</a>
+                    <a ui-sref="todo-item-add({id:todoItem.id})">
+                        <span class="btn btn-default btn-circle"> <span class="glyphicon glyphicon-edit"/>&nbsp;Edit</span>
+                    </a>
                 </td>
             </tr>
             </tbody>

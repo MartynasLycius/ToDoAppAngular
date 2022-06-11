@@ -11,9 +11,9 @@ angular.module('ToDoApp')
         $scope.todoItem = {};
         console.log($stateParams)
         if($stateParams.id) {
-            TodoItem.get({id: $stateParams.id}, function (data) {
-                $scope.todoItem = data
-                console.log(data)
+            TodoItem.get({id: $stateParams.id}, function (response) {
+                $scope.todoItem = response.data
+                console.log(response.data)
 
             })
         }

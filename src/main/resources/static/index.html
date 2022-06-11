@@ -5,30 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TODO App</title>
+    <!--to ignore favicon.ico calling-->
+    <link rel="shortcut icon" href="#" />
 
     <!-- importing the bootstrap styles -->
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./css/app.css">
 </head>
-
-<style>
-    .margin-top-5 {
-        margin-top: 10px;
-    }
-
-    .panel-scroll {
-        height: 300px;
-        overflow-y: auto;
-    }
-    .btn-circle.btn-md {
-        width: 50px;
-        height: 50px;
-        padding: 7px 10px;
-        border-radius: 25px;
-        font-size: 10px;
-        text-align: center;
-    }
-</style>
 <body ng-app="ToDoApp">
 
 <!-- View for adding the navigation bar -->
@@ -41,22 +25,24 @@
 </div>
 
 <!-- Including Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.4.8/angular-resource.min.js"></script>
 
 
 <!-- Including jquery and twitter bootstrap -->
-<script
-        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!-- Load main app.js -->
 <script type="text/javascript" src="./js/app.js"></script>
 
+<!--  Load Directive -->
+<script type="text/javascript" src="./js/directive/alert/alert.directive.js"></script>
+<script type="text/javascript" src="./js/directive/alert/alert.service.js"></script>
+
 <!--  Load interceptors -->
-<script type="text/javascript" src="./js/interceptors/http-resource-interceptor.js"></script>
+<script type="text/javascript" src="./js/interceptors/notification.interceptor.js"></script>
 
 <!-- Load route  -->
 <script type="text/javascript" src="./js/route.js"></script>
@@ -69,7 +55,6 @@
 <script type="text/javascript" src="./js/controllers/nav.js"></script>
 <script type="text/javascript" src="./js/controllers/login.js"></script>
 <script type="text/javascript" src="js/controllers/todo-item.js"></script>
-<script type="text/javascript" src="./js/controllers/page-not-found.js"></script>
 <script type="text/javascript" src="./js/controllers/access-denied.js"></script>
 </body>
 </html>

@@ -34,3 +34,17 @@
         <!--/.nav-collapse -->
     </div>
 </nav>
+<div ng-cloak ng-show="globalErrorMessage" class="animated fadeInDown message error jj"
+     style="margin: 5px 0px 0px 0px;padding:25px;border-radius: 3px;font-size: 17px; text-align:center; font-weight: bold">
+    <span>{{globalErrorMessage}}</span>
+</div>
+
+<div ng-cloak ng-show="globalSuccessMessage" class="animated fadeInDown message success jj" >
+    <span>{{globalSuccessMessage}}</span>
+</div>
+
+<div ng-cloak ng-show="globalWarningMessage" class="animated fadeInDown message warning jj"
+     style="margin: 5px 0px 0px 0px;padding:25px; font-size: 17px; border-radius:3px;text-align: center;font-weight: bold">
+    <span>{{globalWarningMessage}}</span>
+    <b ng-click="closeAlert()"><i class="fa fa-times-circle" aria-hidden="true"></i></b>
+</div>

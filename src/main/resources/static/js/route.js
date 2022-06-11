@@ -1,15 +1,5 @@
 angular.module('ToDoApp').config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/page-not-found');
-    $stateProvider.state('nav', {
-        abstract: true,
-        url: '',
-        views: {
-            'nav@': {
-                templateUrl: './views/nav.html',
-                controller: 'NavController'
-            }
-        }
-    }).state('login', {
+    $stateProvider.state('login', {
         parent: 'nav',
         url: '/login',
         views: {
@@ -34,15 +24,6 @@ angular.module('ToDoApp').config(function ($stateProvider, $urlRouterProvider) {
             'content@': {
                 templateUrl: './views/todo-item-add.html',
                 controller: 'TodoItemAddController'
-            }
-        }
-    }).state('page-not-found', {
-        parent: 'nav',
-        url: '/page-not-found',
-        views: {
-            'content@': {
-                templateUrl: './views/page-not-found.html',
-                controller: 'PageNotFoundController'
             }
         }
     }).state('access-denied', {

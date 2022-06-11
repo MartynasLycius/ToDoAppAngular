@@ -1,0 +1,81 @@
+.margin-top-5 {
+    margin-top: 10px;
+}
+
+.panel-scroll {
+    height: 300px;
+    overflow-y: auto;
+}
+.btn-circle.btn-md {
+    width: 50px;
+    height: 50px;
+    padding: 7px 10px;
+    border-radius: 25px;
+    font-size: 10px;
+    text-align: center;
+}
+
+.message.error > b {
+    float: right;
+}
+
+.message.success > b {
+    float: right;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.message.warning > b {
+    float: right;
+}
+
+.message.jj {
+    position: absolute;
+    z-index: 99;
+    top: 52px;
+    right: 20px;
+}
+
+.message.error.jj b {
+    margin-left: 15px;
+}
+
+.message.error.jj .fa-exclamation-triangle {
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.message.success.jj b {
+    margin-left: 15px;
+}
+
+.message.success.jj .fa-check {
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.message.warning.jj b {
+    margin-left: 15px;
+}
+
+.message.warning.jj .fa-exclamation-triangle {
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+
+.error {
+    color: white;
+    background-color: #ff8f00ed;
+}
+
+.success {
+    color: #3c763d;
+    background-color: #dff0d8f0;
+    border: 1px solid #d6e9c6;
+}
+
+.warning {
+    color: white;
+    background-color: #ff8f00ed;
+}
