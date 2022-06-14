@@ -36,6 +36,7 @@ public class TodoItem  extends Audit {
     private String status;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", timezone = JsonFormat.DEFAULT_TIMEZONE)
     private Date date;
 
     public Long getId() {

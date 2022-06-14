@@ -1,4 +1,4 @@
-angular.module('ToDoApp', ['ui.router','ngResource'])
+angular.module('ToDoApp', ['ui.router','ui.bootstrap',,'ngResource'])
     .run(function (AuthService, $rootScope, $state) {
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
             if (!AuthService.getUser()) {

@@ -1,7 +1,14 @@
 .margin-top-5 {
     margin-top: 10px;
 }
-
+.message {
+    margin: 5px 0px 0px 0px;
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 17px;
+    text-align: center;
+    font-weight: bold
+}
 .panel-scroll {
     height: 300px;
     overflow-y: auto;
@@ -78,4 +85,8 @@
 .warning {
     color: white;
     background-color: #ff8f00ed;
+}
+
+.alert-info {
+    color: red;
 }

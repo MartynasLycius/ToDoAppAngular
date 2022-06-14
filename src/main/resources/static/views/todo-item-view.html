@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+    <div class="panel-heading caption-subject font-green-sharp bold uppercase">
+        <span>Todo Item Details</span>
+        <span class="pull-right">
+            <a ui-sref="todo-item-add({id:todoItem.id})">
+                        <span> <span class="glyphicon glyphicon-edit"/>&nbsp;Edit</span></a> &nbsp;|
+            <a ui-sref="home"><span class="glyphicon glyphicon-list">
+            </span><span class="font-grey-cararra"> Todo Item List</span></a> &nbsp;|
+           <a ui-sref="todo-item-add">
+                <span class="font-grey-cararra"><span class="glyphicon glyphicon-plus"></span> Add New</span>
+            </a>
+        </span>
+    </div>
+
+    <div class="panel-body">
+            <div class="col-md-6 col-md-offset-2">
+                <div class="form-group">
+                    <label class="control-label" for="title"> Title</label>
+                    <span class="form-control">{{todoItem.title}}</span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="description" style="margin-bottom: 10px;"> Description</label>
+                    <p class="form-control">{{todoItem.description}}</p>
+                </div>
+                <div class="form-group" >
+                    <label class="control-label" for="status"> Status</label>
+                    <span class="form-control">{{todoItem.status}}</span>
+                </div>
+<!--                <div class="form-group" style="margin-bottom: 10px;">-->
+<!--                    <label class="control-label" for="name"> Date</label>-->
+<!--                    <input type="text" class="form-control" name="name" id="name"-->
+<!--                           ng-model="todoItem.indexNo" placeholder="স্মারক নম্বর"-->
+<!--                           required>-->
+<!--                </div>-->
+
+            </div>
+    </div>
+</div>

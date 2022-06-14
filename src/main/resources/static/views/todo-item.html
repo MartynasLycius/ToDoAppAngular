@@ -2,7 +2,7 @@
     <div class="panel-heading caption-subject font-green-sharp bold uppercase">
         <span>Todo Item List</span>
         <span class=" pull-right" style="margin-top: -6px;">
-            <a ui-sref="todo-item-add" >
+            <a ui-sref="todo-item-add">
                 <span class="font-grey-cararra"><span class="glyphicon glyphicon-plus"></span> Add New</span>
             </a>
         </span>
@@ -12,7 +12,7 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th class="text-center">Serial No</th>
+                <th class="text-center">#</th>
                 <th class="text-center">Title</th>
                 <th class="text-center">Description</th>
                 <th class="text-center">Status</th>
@@ -25,26 +25,32 @@
                 <td class="text-center" colspan="3">No Records</td>
             </tr>
             <tr ng-repeat="todoItem in todoItems">
-                <td class="text-center">{{filesSerial+$index+1}}</td>
-                <td class="text-center">{{todoItem.title}}</td>
-                <td class="text-center">{{todoItem.description}}</td>
-                <td class="text-center">{{todoItem.status}}</td>
+                <td class="text-center"> {{filesSerial+$index+1}}</td>
+                <td class="text-center"><a ui-sref="todo-item-view({id:todoItem.id})">{{todoItem.title}}</a></td>
+                <td class="text-center"><a ui-sref="todo-item-view({id:todoItem.id})">{{todoItem.description}}</a></td>
+                <td class="text-center"  ng-style="todoItem.status == 'NEW' && {'color':'orange'} ||
+                todoItem.status == 'IN_PROGRESS' && {'color':'blue'} ||
+                todoItem.status == 'DONE' && {'color':'green'} ">{{todoItem.status}}</td>
                 <td class="text-center">{{todoItem.date}}</td>
                 <td class="text-center">
                     <a ui-sref="todo-item-add({id:todoItem.id})">
                         <span class="btn btn-default btn-circle"> <span class="glyphicon glyphicon-edit"/>&nbsp;Edit</span>
+                    </a>&nbsp;&nbsp;
+                    <a ng-click="delete(todoItem)">
+                        <span class="btn btn-default btn-circle btn-danger"> <span class="glyphicon glyphicon-trash"/>&nbsp;Delete</span>
                     </a>
                 </td>
             </tr>
             </tbody>
         </table>
-
-        <pagination ng-model="currentPage"
-                    total-items="totalItems"
-                    items-per-page="itemsPerPage"
-                    max-size="maxSize"
-                    boundary-links="true"
-                    ng-change="pageChanged()"></pagination>
+        <div align="center">
+            <pagination ng-model="currentPage"
+                        total-items="totalItems"
+                        items-per-page="itemsPerPage"
+                        max-size="maxSize"
+                        boundary-links="true"
+                        ng-change="pageChanged()"></pagination>
+        </div>
     </div>
 </div>
 </div>

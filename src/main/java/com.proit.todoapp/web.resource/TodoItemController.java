@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Date;
 import java.util.Optional;
 
 /**
@@ -28,7 +29,7 @@ public class TodoItemController {
         if(pageNumber== null) {
             pageNumber = 1;
         }
-        PageRequest pageRequest = PageRequest.of(pageNumber - 1, 20);
+        PageRequest pageRequest = PageRequest.of(pageNumber - 1, 5);
         Page<TodoItem> currentResults = todoItemRepository.findAll(pageRequest);
         return new ResponseEntity<Page>(currentResults, HttpStatus.OK);
     }
@@ -36,6 +37,9 @@ public class TodoItemController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Response> create(@Valid @RequestBody TodoItem todoItem) {
         try {
+            if(todoItem.getId()==null) {
+                todoItem.setDate(new Date());
+            }
             todoItem = todoItemRepository.save(todoItem);
             return new ResponseEntity<Response>(new Response(todoItem), HttpStatus.OK);
         } catch (Exception ex) {
