@@ -20,19 +20,16 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="description" style="margin-bottom: 10px;"> Description</label>
-                    <p class="form-control">{{todoItem.description}}</p>
+                    <p>{{todoItem.description}}</p>
                 </div>
                 <div class="form-group" >
                     <label class="control-label" for="status"> Status</label>
                     <span class="form-control">{{todoItem.status}}</span>
                 </div>
-<!--                <div class="form-group" style="margin-bottom: 10px;">-->
-<!--                    <label class="control-label" for="name"> Date</label>-->
-<!--                    <input type="text" class="form-control" name="name" id="name"-->
-<!--                           ng-model="todoItem.indexNo" placeholder="স্মারক নম্বর"-->
-<!--                           required>-->
-<!--                </div>-->
-
+                <div class="form-group" >
+                    <label class="control-label" for="date"> Date</label>
+                    <span class="form-control">{{todoItem.date | date:'dd-MM-yyyy'}}</span>
+                </div>
             </div>
     </div>
 </div>

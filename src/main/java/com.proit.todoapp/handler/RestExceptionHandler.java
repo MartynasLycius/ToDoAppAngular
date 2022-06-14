@@ -1,4 +1,4 @@
-package com.proit.todoapp;
+package com.proit.todoapp.handler;
 
 import com.proit.todoapp.mapper.Response;
 import org.hibernate.exception.ConstraintViolationException;

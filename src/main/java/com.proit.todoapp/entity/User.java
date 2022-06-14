@@ -3,7 +3,6 @@ package com.proit.todoapp.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.proit.todoapp.enumeration.Role;
 import com.proit.todoapp.util.Util;
-//import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.*;
@@ -151,18 +150,6 @@ public class User implements Serializable {
             setPassword(Util.getEncoder().encode(getPlainPassword()));
         }
     }
-
-//    public void setRolesFromAuthorities(List<Authority> authorities) {
-//        if(authorities == null) {
-//            this.roles = null;
-//            return;
-//        }
-//
-//        this.roles = new ArrayList<Role>();
-//        for(Authority authority : authorities) {
-//            this.roles.add(Role.valueOf(authority.getAuthority()));
-//        }
-//    }
 
     public Set<String> getAuthorities() {
         return authorities;

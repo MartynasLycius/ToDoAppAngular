@@ -1,7 +1,5 @@
 package com.proit.todoapp.mapper;
 
-import java.util.List;
-
 /**
  * Created by rana on 9/06/22.
  */

@@ -90,3 +90,12 @@
 .alert-info {
     color: red;
 }
+.user {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.logout {
+    cursor: pointer;
+    margin-left: 5px;
+}

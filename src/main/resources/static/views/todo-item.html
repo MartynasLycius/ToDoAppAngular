@@ -31,7 +31,7 @@
                 <td class="text-center"  ng-style="todoItem.status == 'NEW' && {'color':'orange'} ||
                 todoItem.status == 'IN_PROGRESS' && {'color':'blue'} ||
                 todoItem.status == 'DONE' && {'color':'green'} ">{{todoItem.status}}</td>
-                <td class="text-center">{{todoItem.date}}</td>
+                <td class="text-center">{{todoItem.date | date:'dd-MM-yyyy'}}</td>
                 <td class="text-center">
                     <a ui-sref="todo-item-add({id:todoItem.id})">
                         <span class="btn btn-default btn-circle"> <span class="glyphicon glyphicon-edit"/>&nbsp;Edit</span>

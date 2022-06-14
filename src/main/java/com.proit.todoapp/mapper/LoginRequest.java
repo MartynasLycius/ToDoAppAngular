@@ -1,8 +1,5 @@
 package com.proit.todoapp.mapper;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-
 /**
  * Created by rana on 9/06/22.
  */

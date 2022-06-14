@@ -1,9 +1,8 @@
 package com.proit.todoapp.listeners;
 
-import com.proit.todoapp.entity.User;
-import com.proit.todoapp.util.Util;
 import com.proit.todoapp.entity.Audit;
 import com.proit.todoapp.repositories.UserRepository;
+import com.proit.todoapp.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;

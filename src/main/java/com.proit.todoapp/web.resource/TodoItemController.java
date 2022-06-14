@@ -37,9 +37,6 @@ public class TodoItemController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Response> create(@Valid @RequestBody TodoItem todoItem) {
         try {
-            if(todoItem.getId()==null) {
-                todoItem.setDate(new Date());
-            }
             todoItem = todoItemRepository.save(todoItem);
             return new ResponseEntity<Response>(new Response(todoItem), HttpStatus.OK);
         } catch (Exception ex) {

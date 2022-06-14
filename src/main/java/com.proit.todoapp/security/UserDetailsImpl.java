@@ -3,7 +3,6 @@ package com.proit.todoapp.security;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.proit.todoapp.entity.Authority;
 import com.proit.todoapp.entity.User;
-import com.proit.todoapp.enumeration.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -5,6 +5,7 @@ angular.module('ToDoApp')
             return $resource('./api/to-do-item/:id', {}, {
             'get'  : { method: 'GET',headers: {'Content-Type': 'application/json'}, params: {}, format: 'json',
                 transformResponse: [function (data, headersGetter) {
+                    console.log(data);
                     return data;
                 }].concat($http.defaults.transformResponse)},
             'save'  : { method: 'POST',  headers: {'Content-Type': 'application/json'}, params: {}, format: 'json',
