@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="home">ToDo App</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li ng-show="user.username"><a> <span class="user">Hi,
+							{{user.fullName}}</span> <span ng-click="logout()" href=""
+                                                       class="logout">Logout</span>
+                </a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+<div ng-cloak ng-show="globalErrorMessage" class="animated fadeInDown message error jj"
+     style="margin: 5px 0px 0px 0px;padding:25px;border-radius: 3px;font-size: 17px; text-align:center; font-weight: bold">
+    <span>{{globalErrorMessage}}</span>
+</div>
+
+<div ng-cloak ng-show="globalSuccessMessage" class="animated fadeInDown message success jj" >
+    <span>{{globalSuccessMessage}}</span>
+</div>
+
+<div ng-cloak ng-show="globalWarningMessage" class="animated fadeInDown message warning jj"
+     style="margin: 5px 0px 0px 0px;padding:25px; font-size: 17px; border-radius:3px;text-align: center;font-weight: bold">
+    <span>{{globalWarningMessage}}</span>
+    <b ng-click="closeAlert()"><i class="fa fa-times-circle" aria-hidden="true"></i></b>
+</div>

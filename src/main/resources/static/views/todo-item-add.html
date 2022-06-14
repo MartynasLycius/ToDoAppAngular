@@ -1,0 +1,75 @@
+<div class="panel panel-default">
+    <div class="panel-heading caption-subject font-green-sharp bold uppercase">
+        <span>New Todo Item</span>
+        <span class="pull-right">
+            <a ui-sref="home"><span class="glyphicon glyphicon-list"></span>
+                <span class="font-grey-cararra"> Todo Item List</span></a></span>
+    </div>
+
+    <div class="panel-body">
+        <form ng-show="!success" name="form" role="form" novalidate ng-submit="save()" show-validation>
+            <div class="col-md-6 col-md-offset-2">
+                <div class="form-group">
+                    <label class="control-label" for="title"> Title</label>
+                    <input type="text" class="form-control" name="title" id="title"
+                           ng-model="todoItem.title" placeholder="Title" required/>
+                    <div style="margin-top: 5px;">
+                        <p class="alert-info" ng-show="error.title">
+                            {{error.title}}
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="description" style="margin-bottom: 10px;"> Description</label>
+                    <textarea cols="30" rows="4" type="text" class="form-control" name="description" id="description"
+                              ng-model="todoItem.description" placeholder="Description" required></textarea>
+
+                    <div style="margin-top: 5px;">
+                        <p class="alert-info" ng-show="error.title">
+                            {{error.description}}
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group" >
+                    <label class="control-label" for="status"> Status</label>
+                    <select class="form-control" ng-model="todoItem.status">
+                        <option value="">Select Status</option>
+                        <option value="NEW">New</option>
+                        <option value="IN_PROGRESS">In Progress</option>
+                        <option value="DONE">Done</option>
+                    </select>
+                    <div style="margin-top: 5px;">
+                        <p class="alert-info" ng-show="error.title">
+                            {{error.status}}
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group" >
+                    <label class="control-label" for="date"> Date</label>
+                        <p class="input-group">
+                            <input type="text" class="form-control" readonly="readonly"
+                                   datepicker-popup="{{dateFormat}}"
+                                   ng-model="todoItem.date" is-open="todoItemDate"
+                                   datepicker-options="dateOptions"
+                                   date-disabled="disabled(date, mode)"
+                                   placeholder="DD-MM-YYYY"
+                                   close-text="Close"/>
+                            <span class="input-group-btn">
+                                             <button type="button" class="btn btn-default"
+                                                     ng-click="open($event,'todoItem.todoItemDate')">
+                                            <i class="glyphicon glyphicon-calendar"></i>
+                                            </button> </span>
+                        </p>
+                </div>
+
+
+                <div class="row">
+                    <div class="form-group col-md-6 pull-right">
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-default  btn-success">Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
