@@ -1,0 +1,59 @@
+<div class="place_at_center">
+  <div class="container">
+    <ngx-ui-loader [loaderId]="'loader-02'"></ngx-ui-loader>
+
+    <div class="row">
+      <div class="col text-center">
+        <button class="btn btn-primary" (click)="goBack()">Back</button>
+      </div>
+    </div>
+
+
+    <form [formGroup]="todoForm" >
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name">
+
+        <div *ngIf="todoForm.get('name')?.errors && (todoForm.get('name')?.dirty || todoForm.get('name')?.touched)">
+          <div *ngIf="todoForm.get('name')?.hasError('required')">Name is required.</div>
+          <div *ngIf="todoForm.get('name')?.hasError('minlength')">Name must be at least 3 characters.</div>
+          <div *ngIf="todoForm.get('name')?.hasError('maxlength')">Name cannot exceed 255 characters.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+      <div class="form-group bordered">
+        <label for="status">Status:</label>
+        <mat-select id="status" formControlName="status">
+          <mat-option value="PENDING">Pending</mat-option>
+          <mat-option value="COMPLETE">Complete</mat-option>
+          <mat-option value="IN_PROGRESS">In-progress</mat-option>
+        </mat-select>
+
+      </div>
+
+      <div class="form-group bordered">
+        <label for="priority">Priority:</label>
+        <mat-select id="priority" formControlName="priority">
+          <mat-option value="HIGH">High</mat-option>
+          <mat-option value="NORMAL">Normal</mat-option>
+          <mat-option value="LOW">Low</mat-option>
+        </mat-select>
+      </div>
+      <div class="form-group">
+        <label for="tag">Tag:</label>
+        <input type="text" id="tag" formControlName="tags">
+      </div>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" formControlName="date">
+      </div>
+      <button [disabled]="isValid()"  [ngClass]="{'disabled-button': isValid()}" type="submit"
+              class="btn btn-primary" (click)="onSubmitForm()">Submit</button>
+    </form>
+
+
+  </div>
+</div>
