@@ -1,11 +1,5 @@
 # ToDoApp
 
-This is the job interview task for software developer position
-
-## What to do
-* Fork the repository
-* After work is done, make a pull request and notify me by email
-
 ## Task description
 You need to make a Todo app with these requirements:
 1. Page for listing all the todo items
@@ -15,14 +9,8 @@ You need to make a Todo app with these requirements:
 
 All the other specific requirements are up to you
 
-## Technical requirements
-* Use AngularJS for frontend
-* For backend use Java EE
-* Use any database (Postgres, Oracle, etc.)
-* Make a Maven project
+## Technologies used in this application
+* AngularJS for frontend
+* Java EE for backend (Maven project)
+* MySQL database
 
-## Main points
-* Structure your code
-* Use best practises
-* Use naming conventions
-* Show understanding of software development concepts
