@@ -2,27 +2,16 @@
 
 This is the job interview task for software developer position
 
-## What to do
-* Fork the repository
-* After work is done, make a pull request and notify me by email
-
-## Task description
-You need to make a Todo app with these requirements:
-1. Page for listing all the todo items
-2. Todo item add and edit forms (separate pages)
-3. Todo item consists of (date, item name and description)
-4. Pages must interact between each other logically. (You can go from list to new or edit and when saving go back to list)
-
-All the other specific requirements are up to you
-
-## Technical requirements
-* Use AngularJS for frontend
-* For backend use Java EE
-* Use any database (Postgres, Oracle, etc.)
-* Make a Maven project
-
-## Main points
-* Structure your code
-* Use best practises
-* Use naming conventions
-* Show understanding of software development concepts
+## How to run the TODO App with docker
+1. clone the project
+2. if docker is not installed need to install docker
+3. go to frontend project dir and run below command:
+>  docker build -t frontend-app .
+4. go to backend dir and run below command:
+>  docker build -t todo-backend-app .
+5. then run below command step by step in terminal:
+>  docker network create todo-network
+>  docker run --network todo-network --name pgdb -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=todo -d postgres
+>  docker run --network todo-network --name todo-backend-app -d -p 9090:9090 -e "db_url=pgdb"   todo-backend-app
+>  docker run  --network todo-network --name frontend-app -d -p 4200:80 frontend-app
+6. then go to browser and hit http://localhost:4200/

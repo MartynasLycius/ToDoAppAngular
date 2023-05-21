@@ -1,0 +1,22 @@
+<h2>Item List</h2>
+<table class="table table-striped">
+    <thead>
+        <th>Item</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <tr *ngFor ="let item of items">
+            <td>{{item.name}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.toDoDate}}</td>
+            <td>
+                <button (click)="updateItem(item.id)" class="btn btn-info">Update</button>
+                <button (click) = "deleteItem(item.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            </td>
+            
+        </tr>
+    </tbody>
+
+</table>
