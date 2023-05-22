@@ -26,3 +26,20 @@ All the other specific requirements are up to you
 * Use best practises
 * Use naming conventions
 * Show understanding of software development concepts
+
+## Getting Started
+
+To install this todo app, run the following commands:
+
+git clone https://github.com/anseri/ToDoAppAngular.git
+cd ToDoAppAngular
+
+This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions below.
+
+To run the server, cd into the todo-app-server folder and run:
+
+./mvnw spring-boot:run
+
+To run the client, cd into the todo-app-client folder and run:
+
+npm install && npm start
