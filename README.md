@@ -43,7 +43,7 @@ This will get a copy of the project installed locally. To install all of its dep
 
 To run the server, cd into the todo-app-server folder and run:
 
-./mvnw spring-boot:run
+./mvnw spring-boot:run or mvn spring-boot:run (windows) or run Application.java 
 the server on http://localhost:8090
 
 To run the client, cd into the todo-app-client folder and run:
