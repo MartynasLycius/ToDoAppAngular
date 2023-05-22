@@ -45,7 +45,9 @@ This will get a copy of the project installed locally. To install all of its dep
 To run the server, cd into the todo-app-server folder and run:
 
 ./mvnw spring-boot:run
+the server on http://localhost:8090
 
 To run the client, cd into the todo-app-client folder and run:
 
 npm install && npm start
+the client run on http://localhost:3456
