@@ -1,11 +1,14 @@
-FROM openjdk:8 AS builder
+ARG MVN_VERSION=3.6.3
+ARG JDK_VERSION=8
+
+FROM maven:${MVN_VERSION}-jdk-${JDK_VERSION}  AS builder
 WORKDIR /app
 COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
-RUN ./mvnw install -DskipTests
+RUN mvn clean package
 
 FROM openjdk:8
 RUN mkdir /app
