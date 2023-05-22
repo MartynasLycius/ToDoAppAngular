@@ -28,10 +28,16 @@ All the other specific requirements are up to you
 * Show understanding of software development concepts
 
 ## Getting Started
+* Create todo nysql schema
+ 
+* Update todo-app-server below application.properties
+* spring.datasource.username=username
+* spring.datasource.password=password
 
 To install this todo app, run the following commands:
 
 git clone https://github.com/anseri/ToDoAppAngular.git
+
 cd ToDoAppAngular
 
 This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions below.
