@@ -1,0 +1,21 @@
+<h3>Create Todo</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="selectedToDo.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Description</label>
+      <input type="text" class="form-control" id="description" required [(ngModel)]="selectedToDo.description" name="description">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Date</label>
+      <input type="date" class="form-control" id="date" required [(ngModel)]="selectedToDo.date" name="date">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
