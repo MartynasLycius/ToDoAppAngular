@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>ToDo List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let toDo of toDos">
+            <td>{{toDo.name}}</td>
+            <td>{{toDo.description}}</td>
+            <td>{{toDo.date}}</td>
+            <td><button (click)="deleteToDo(toDo)" class="btn btn-danger">Delete</button>
+                <button (click)="updateToDo(toDo)" class="btn btn-info" style="margin-left: 10px">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
