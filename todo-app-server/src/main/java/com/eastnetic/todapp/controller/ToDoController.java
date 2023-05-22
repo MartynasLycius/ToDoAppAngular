@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.eastnetic.todapp.model.ToDo;
 import com.eastnetic.todapp.service.TodoService;
 
-@RestController @CrossOrigin(origins = "http://localhost:4200")
+@RestController @CrossOrigin(origins = "http://localhost:3456")
 @RequestMapping("api/todos")
 public class ToDoController {
 	private final TodoService todoService;
