@@ -1,28 +1,21 @@
 # ToDoApp
 
-This is the job interview task for software developer position
+## Features
+* User signup, login and profile update
+* Todo create, update, delete and view
 
-## What to do
-* Fork the repository
-* After work is done, make a pull request and notify me by email
+## Technologies
+* Frontend: Html, CSS, Bootstrap, Typescript, Angular
+* Backend: Java, Spring boot, Spring security
+* Database: MySQL
 
-## Task description
-You need to make a Todo app with these requirements:
-1. Page for listing all the todo items
-2. Todo item add and edit forms (separate pages)
-3. Todo item consists of (date, item name and description)
-4. Pages must interact between each other logically. (You can go from list to new or edit and when saving go back to list)
-
-All the other specific requirements are up to you
-
-## Technical requirements
-* Use AngularJS for frontend
-* For backend use Java EE
-* Use any database (Postgres, Oracle, etc.)
-* Make a Maven project
-
-## Main points
-* Structure your code
-* Use best practises
-* Use naming conventions
-* Show understanding of software development concepts
+## How to run
+* Import as spring boot or maven project
+* The tomcat server will listen to 8080 port
+* Start the MySQL server on port 3306 and create a database named "todoapp"
+* Run the backend application
+* For frontend go into the "frontend" folder from root directory
+* Start a command prompt in that folder and run the following commands:
+  1. npm install
+  2. ng serve
+* Now browse "http://localhost:4200". That's it.
