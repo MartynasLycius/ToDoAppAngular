@@ -1,0 +1,48 @@
+
+<div class="animated fadeIn" ng-controller="TodoController">
+  
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-md-6">
+                <i class="fa fa-align-justify"></i> TODO List
+              </div>
+              <div class="col-md-6" style="text-align: right;">
+                <a class="btn btn-primary active" ui-sref-active="active" ui-sref="app.crate-todo"><i class=""></i>Add New</a>
+                <!-- ui-sref="app.crate-todo" -->
+                <!-- <button type="button" class="btn btn-primary active"><i class=""></i>Add New</button> -->
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered table-striped table-sm">
+              <thead>
+                <tr>
+                  <th class="text-center">#</th>
+                  <th class="text-center">Name</th>
+                  <th class="text-center">Description</th>
+                  <th class="text-center">Date</th>                  
+                  <th class="text-center">ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="todo in todos">
+                  <td class="text-center">{{todo.id}}</td>
+                  <td>{{todo.name}}</td>
+                  <td>{{todo.description}}</td>
+                  <td class="text-center">{{todo.date}}</td>                  
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-info" ng-click="edit(todo)">Edit</button>
+                  </td>
+                </tr>                
+              </tbody>
+            </table>            
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+    </div>
+    <!--/.row-->
+  </div>
