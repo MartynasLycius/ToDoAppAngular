@@ -7,7 +7,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col-md-6">
-                <i class="fa fa-align-justify"></i> Update Todo - {{editingTodo.id}}
+                <i class="fa fa-align-justify"></i> Update Todo
               </div>              
             </div>
           </div>
@@ -16,13 +16,14 @@
               <form ng-submit="updateTodo()">
 
                 <input type="hidden" ng-model="editingTodo.id" />
+                
 
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Name" ng-model="editingTodo.name" />
+                  <input type="text" class="form-control" placeholder="Name" ng-model="editingTodo.name" ng-value="name"  />
                 </div>
 
                 <div class="form-group">
-                    <textarea rows="3" class="form-control" placeholder="Description" ng-model="editingTodo.description" />
+                    <textarea rows="3" class="form-control" placeholder="Description" ng-model="editingTodo.description" ng-value="description" />
                 </div>
 
                 <div class="form-group">

@@ -5,7 +5,8 @@ todoControllers.controller('TodoController', ['$scope', '$location', 'TodoServic
     $scope.todo = {};
     $scope.todos = [];
     $scope.newTodo = {"name":"", "description":"", "date":""};
-    //$scope.editingTodo = {}; 
+    $scope.editingTodo = {};
+    $scope.vvv = 'VVV'; 
       
 
     fetchAllTodos();
@@ -54,11 +55,7 @@ todoControllers.controller('TodoController', ['$scope', '$location', 'TodoServic
             );
     }
     
-    $scope.edit = function(todoForEdit) {
-        //var edit_form = {};
-        //angular.copy(todoForEdit, edit_form);
-        //$scope.editingTodo = edit_form;
-        //angular.copy(todoForEdit, $scope.editingTodo);
+    $scope.edit = function(todoForEdit) {        
         $scope.editingTodo = angular.copy(todoForEdit);;
         console.log({$scope_editingTodo: $scope.editingTodo})
         $location.path('/edit-todo');
