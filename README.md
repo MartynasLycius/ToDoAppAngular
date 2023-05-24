@@ -14,7 +14,7 @@ All the other specific requirements are up to you
 * JavaEE for backend (Maven project)
 * MySQL database
 
-## JavaEE Application
+## JavaEE Application (Backend)
 ### Environment Setup
 * Download JDK 1.8 or higher and configure
 * Download Eclipse IDE for JavaEE Developers (https://www.eclipse.org/downloads/packages/release/kepler/sr2/eclipse-ide-java-ee-developers)
@@ -47,8 +47,21 @@ All the other specific requirements are up to you
 ```
 * Select project root > Run As > Run on server
 * Test the resouce endpoint in postman:
-* For All Items
+* For All Items (GET Method)
 ```
 http://localhost:8089/todo-service/resources/items
+```
+
+## AngularJS Web Application (Frontend)
+### Environment Setup
+* Download Node.js 14.x (https://nodejs.org/en/blog/release/v14.17.3)
+* Download VSCode and install
+* Open 'todo-web' form the previously cloned repository
+* Run the project with the following commands:
+```
+npm install
+```
+```
+gulp
 ```
 
