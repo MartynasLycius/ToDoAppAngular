@@ -8,3 +8,5 @@
 /todo-service/.settings
 
 .vscode/
+
+#/todo-web/node_modules
