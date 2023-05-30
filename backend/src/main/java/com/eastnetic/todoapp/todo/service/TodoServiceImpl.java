@@ -59,15 +59,9 @@ public class TodoServiceImpl extends BaseService implements TodoService {
 	@Override
 	public PagedResponse<TodoResponse> getAll(GetTodoRequest filterTodoRequest) {
 		UserDetailsImpl user = getCurrentUser();
-		
-		PaginationRequest paginationRequest = filterTodoRequest.getPagination();
-		Sort sort = PageUtil.getSort(paginationRequest.getSorts());
-		PageRequest pagination = PageRequest.of(paginationRequest.getPage() - 1, paginationRequest.getSize(), sort);
-		
-		Specification<Todo> attributeFilter = TodoSpecifications.criteriaFilter(user.getId(),
-		                                                                        filterTodoRequest.getFilters());
-		
-		Page<Todo> todos = todoRepository.findAll(attributeFilter, pagination);
+
+		Page<Todo> todos = todoRepository.findAll(TodoSpecifications.criteriaFilter(user.getId(),
+				filterTodoRequest.getFilters()), PageUtil.getPageable(filterTodoRequest.getPagination()));
 		return PageUtil.paginate(todos, todoMapper::toDto);
 	}
 	

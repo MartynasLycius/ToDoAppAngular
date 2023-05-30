@@ -1,9 +1,13 @@
 package com.eastnetic.todoapp.common.util;
 
+import com.eastnetic.todoapp.common.domain.request.PaginationRequest;
 import com.eastnetic.todoapp.common.domain.response.PagedResponse;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Order;
+import org.springframework.util.ObjectUtils;
 
 import java.util.List;
 import java.util.function.Function;
@@ -46,6 +50,11 @@ public class PageUtil {
 		                                              .with(Sort.Direction.fromString(order[1].trim())))
 		                           .collect(Collectors.toList());
 		return Sort.by(orders);
+	}
+
+	public static Pageable getPageable(PaginationRequest request) {
+		Sort sort = PageUtil.getSort(request.getSorts());
+		return PageRequest.of(request.getPage() - 1, request.getSize(), sort);
 	}
 	
 }
