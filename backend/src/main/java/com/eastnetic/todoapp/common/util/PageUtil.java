@@ -53,7 +53,7 @@ public class PageUtil {
 	}
 
 	public static Pageable getPageable(PaginationRequest request) {
-		Sort sort = PageUtil.getSort(request.getSorts());
+		Sort sort = getSort(request.getSorts());
 		return PageRequest.of(request.getPage() - 1, request.getSize(), sort);
 	}
 	
