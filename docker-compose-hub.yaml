@@ -1,0 +1,73 @@
+version: '3.9'
+
+
+services:
+
+  todo-app-backend:
+    image: nishad5089/todoapp-todo-app-backend
+    environment:
+      - spring.datasource.url=jdbc:postgresql://todoapp-db:5432/todoapp
+      - redis.host=tokens-db
+    networks:
+      - todoapp-network
+    ports:
+      - "9080:8080"
+    depends_on:
+      - todoapp-db
+      - tokens-db
+
+  todo-app-frontend:
+    image: nishad5089/todoapp-todo-app-frontend
+    networks:
+      - todoapp-network
+    ports:
+      - "9081:4200"
+    depends_on:
+      - todo-app-backend
+
+  todoapp-db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: todoapp
+      POSTGRES_USER: dev@todoapp
+      POSTGRES_PASSWORD: password@todoapp
+    volumes:
+      - todoapp-db-data:/var/lib/postgresql/data
+    networks:
+      - todoapp-network
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}" ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 3s
+
+  tokens-db:
+    image: redis:alpine
+    command: redis-server --requirepass password@tokens
+    environment:
+      - TOKENS_DB_PASSWORD
+    volumes:
+      - tokens-db-data:/data
+    networks:
+      - todoapp-network
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: [ "CMD-SHELL", 'redis-cli -a "$$TOKENS_DB_PASSWORD" PING | grep PONG' ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 2s
+
+
+volumes:
+  todoapp-db-data:
+  tokens-db-data:
+
+
+networks:
+  todoapp-network:
+    driver: bridge
