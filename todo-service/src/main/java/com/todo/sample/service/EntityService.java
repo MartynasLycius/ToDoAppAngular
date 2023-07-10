@@ -15,7 +15,7 @@ public interface EntityService<E> {
 
     E update(E e);
 
-    void delete(int id);
+    void delete(E e);
 
     List<E> find();
 
