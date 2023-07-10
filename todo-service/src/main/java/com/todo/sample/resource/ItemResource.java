@@ -61,11 +61,19 @@ public class ItemResource {
     @Consumes(value = MediaType.APPLICATION_JSON)
     @Produces(value = MediaType.APPLICATION_JSON)
     public Response update(@PathParam("id") int id, Item item) {
-    	Item existingPlayer = itemService.find(id);
-    	if(existingPlayer == null) {
-    		itemService.update(existingPlayer);
+    	Item existingItem = itemService.find(id);
+    	if(existingItem != null) {
+    		itemService.update(existingItem);
             return Response.noContent().build();
     	}    	
     	return Response.status(422).build();
+    }
+    
+    @DELETE
+    @Path("{id}")
+    @Produces(value = MediaType.APPLICATION_JSON)
+    public Response delete(@PathParam("id") int id) {
+        itemService.delete(id);
+        return Response.noContent().build();
     }
 }
