@@ -72,12 +72,8 @@ public class ItemResource {
     @DELETE
     @Path("{id}")
     @Produces(value = MediaType.APPLICATION_JSON)
-    public Response delete(@PathParam("id") int id) {
-    	Item existingItem = itemService.find(id);
-    	if(existingItem != null) {
-    		itemService.delete(existingItem);
-            return Response.noContent().build();
-    	}        
-        return Response.status(422).build();
+    public Response delete(@PathParam("id") int id) {    
+		itemService.delete(id);
+        return Response.noContent().build();    	
     }
 }

@@ -35,7 +35,8 @@ public class ItemService implements EntityService<Item> {
 		return entityManager.merge(item);
 	}
 
-	public void delete(Item item) {
+	public void delete(int id) {
+		Item item = entityManager.find(Item.class, id);
 		entityManager.remove(item);
 	}
 
