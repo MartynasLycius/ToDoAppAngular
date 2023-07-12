@@ -41,9 +41,9 @@ public class ItemResource {
     public Response create(Item item) {
     	
     	if(item.isUrgent()) {
-    		LocalDate today = LocalDate.now().plusDays(2);
+    		LocalDate dateTwoDaysLater = LocalDate.now().plusDays(2);
     		LocalDate itemDate = LocalDate.parse(item.getDate().toString());
-    		if(today.isBefore(itemDate)) {
+    		if(itemDate.isAfter(dateTwoDaysLater)) {
     			return Response.status(422).entity("Date cannot be more than 2 days later").build();
     		}
     	}
