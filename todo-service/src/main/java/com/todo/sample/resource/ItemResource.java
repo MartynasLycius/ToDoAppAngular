@@ -44,7 +44,7 @@ public class ItemResource {
     		LocalDate dateTwoDaysLater = LocalDate.now().plusDays(2);
     		LocalDate itemDate = LocalDate.parse(item.getDate().toString());
     		if(itemDate.isAfter(dateTwoDaysLater)) {
-    			return Response.status(422).entity("Date cannot be more than 2 days later").build();
+    			return Response.status(422).entity("Item Date should be in the next 2 days when it is urgent!").build();
     		}
     	}
     	
