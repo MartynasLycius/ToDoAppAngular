@@ -1,6 +1,8 @@
 package com.todo.sample.resource;
 
 import java.net.URI;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -37,6 +39,15 @@ public class ItemResource {
     @Consumes(value = MediaType.APPLICATION_JSON)
     @Produces(value = MediaType.APPLICATION_JSON)
     public Response create(Item item) {
+    	
+    	if(item.isUrgent()) {
+    		LocalDate today = LocalDate.now().plusDays(2);
+    		LocalDate itemDate = LocalDate.parse(item.getDate().toString());
+    		if(today.isBefore(itemDate)) {
+    			return Response.status(422).entity("Date cannot be more than 2 days later").build();
+    		}
+    	}
+    	
         itemService.create(item);
 
         URI uri = uriInfo.getAbsolutePathBuilder().path(String.valueOf(item.getId())).build();

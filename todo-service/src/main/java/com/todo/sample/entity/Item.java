@@ -27,7 +27,17 @@ public class Item {
     
     private Date date;
     
-    public Item() {
+    private boolean isUrgent;
+    
+    public boolean isUrgent() {
+		return isUrgent;
+	}
+
+	public void setUrgent(boolean isUrgent) {
+		this.isUrgent = isUrgent;
+	}
+
+	public Item() {
     }
 
 	public int getId() {
@@ -64,7 +74,15 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", date=" + date + "]";
-	}    
+		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", date=" + date + ", isUrgent="
+				+ isUrgent + "]";
+	}
+
+//	@Override
+//	public String toString() {
+//		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", date=" + date + "]";
+//	} 
+	
+	
     
 }
