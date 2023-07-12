@@ -1,0 +1,12 @@
+/todo-service/target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+/todo-service/.classpath
+/todo-service/.project
+/todo-service/.settings
+
+.vscode/
+
+#/todo-web/node_modules
